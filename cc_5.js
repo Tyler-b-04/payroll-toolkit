@@ -1,6 +1,6 @@
 // employee records
 const employees = [
-  { name: "Connor", hourlyRate: 18.5, hoursWorked: 38 },
+  { name: "Bali", hourlyRate: 18.5, hoursWorked: 38 },
   { name: "Seabass", hourlyRate: 22.0, hoursWorked: 45 },
   { name: "Devon", hourlyRate: 16.75, hoursWorked: 52 },
   { name: "Tyler", hourlyRate: 20.0, hoursWorked: 40 },
@@ -29,3 +29,8 @@ function processPayroll(employee) {
   const basePay = calculateBasePay(hourlyRate, hoursWorked);
   const overtimePay = calculateOvertimePay(hourlyRate, hoursWorked);
   const grossPay = round2(basePay + overtimePay);
+   const taxes = calculateTaxes(grossPay);
+  const netPay = round2(grossPay - taxes);
+
+  return { name, basePay, overtimePay, grossPay, netPay };
+}
