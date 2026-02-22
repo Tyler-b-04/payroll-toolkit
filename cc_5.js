@@ -7,6 +7,9 @@ const employees = [
 ];
 
 console.log("Loaded employees:", employees);
+function round2(n) {
+  return Math.round(n * 100) / 100;
+}
 
 // base pay up to 40 hours
 function calculateBasePay(rate, hours) {
@@ -34,3 +37,8 @@ function processPayroll(employee) {
 
   return { name, basePay, overtimePay, grossPay, netPay };
 }
+// test functions
+console.log("Test base pay (20, 35) =>", calculateBasePay(20, 35));
+console.log("Test base pay (20, 45) =>", calculateBasePay(20, 45));
+console.log("Test OT pay (20, 45) =>", calculateOvertimePay(20, 45));
+console.log("Test taxes (1000) =>", calculateTaxes(1000));
