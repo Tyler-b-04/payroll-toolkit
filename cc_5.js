@@ -18,3 +18,7 @@ function calculateOvertimePay(rate, hours) {
   const otHours = Math.max(hours - 40, 0);
   return round2(otHours * rate * 1.5);
 }
+// tax rate
+function calculateTaxes(grossPay) {
+  return round2(grossPay * 0.15);
+}
