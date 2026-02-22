@@ -37,8 +37,11 @@ function processPayroll(employee) {
 
   return { name, basePay, overtimePay, grossPay, netPay };
 }
-// test functions
-console.log("Test base pay (20, 35) =>", calculateBasePay(20, 35));
-console.log("Test base pay (20, 45) =>", calculateBasePay(20, 45));
-console.log("Test OT pay (20, 45) =>", calculateOvertimePay(20, 45));
-console.log("Test taxes (1000) =>", calculateTaxes(1000));
+// payroll report
+console.log("~~~~ Payroll Report ~~~~")
+for (let i = 0; i < employees.length; i++) {
+  const payroll = processPayroll(employees[i]);
+  console.log(
+    `Employee ${i + 1}: ${payroll.name} | base: $${payroll.basePay} | OT: $${payroll.overtimePay} | gross: $${payroll.grossPay} | net: $${payroll.netPay}`
+  );
+}
