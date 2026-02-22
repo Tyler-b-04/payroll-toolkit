@@ -5,12 +5,10 @@ const employees = [
   { name: "Devon", hourlyRate: 16.75, hoursWorked: 52 },
   { name: "Tyler", hourlyRate: 20.0, hoursWorked: 40 },
 ];
-
 console.log("Loaded employees:", employees);
 function round2(n) {
   return Math.round(n * 100) / 100;
 }
-
 // base pay up to 40 hours
 function calculateBasePay(rate, hours) {
   const baseHours = Math.min(hours, 40);
@@ -28,8 +26,7 @@ function calculateTaxes(grossPay) {
 // payroll process
 function processPayroll(employee) {
   const { name, hourlyRate, hoursWorked } = employee;
-
-  const basePay = calculateBasePay(hourlyRate, hoursWorked);
+   const basePay = calculateBasePay(hourlyRate, hoursWorked);
   const overtimePay = calculateOvertimePay(hourlyRate, hoursWorked);
   const grossPay = round2(basePay + overtimePay);
    const taxes = calculateTaxes(grossPay);
