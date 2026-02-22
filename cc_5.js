@@ -22,3 +22,10 @@ function calculateOvertimePay(rate, hours) {
 function calculateTaxes(grossPay) {
   return round2(grossPay * 0.15);
 }
+// payroll process
+function processPayroll(employee) {
+  const { name, hourlyRate, hoursWorked } = employee;
+
+  const basePay = calculateBasePay(hourlyRate, hoursWorked);
+  const overtimePay = calculateOvertimePay(hourlyRate, hoursWorked);
+  const grossPay = round2(basePay + overtimePay);
